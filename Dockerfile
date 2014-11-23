@@ -60,11 +60,9 @@ run	chmod 0664 /opt/graphite/storage/graphite.db
 run	cd /opt/graphite/webapp/graphite && python manage.py syncdb --noinput
 
 # grafana
-VERSION_GRAFANA="1.9.0-rc1"
-
-run cd /tmp && wget http://grafanarel.s3.amazonaws.com/grafana-${VERSION_GRAFANA}.tar.gz &&\
-	tar xzvf ${VERSION_GRAFANA}.tar.gz && rm grafana-${VERSION_GRAFANA}.tar.gz &&\
-	mv /tmp/${VERSION_GRAFANA} /src/grafana
+run cd /tmp && wget http://grafanarel.s3.amazonaws.com/grafana-1.9.0-rc1.tar.gz &&\
+	tar xzvf 1.9.0-rc1.tar.gz && rm grafana-1.9.0-rc1.tar.gz &&\
+	mv /tmp/1.9.0-rc1 /src/grafana
 
 add ./grafana/config.js /src/grafana/config.js
 
@@ -96,7 +94,6 @@ expose	7002
 
 # Statsd UDP port
 expose	8125/udp
-
 # Statsd Management port
 expose	8126
 
