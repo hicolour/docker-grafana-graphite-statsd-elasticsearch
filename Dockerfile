@@ -62,7 +62,7 @@ run	cd /opt/graphite/webapp/graphite && python manage.py syncdb --noinput
 # grafana
 run cd /tmp && wget http://grafanarel.s3.amazonaws.com/grafana-1.9.0-rc1.tar.gz &&\
 	tar xzvf grafana-1.9.0-rc1.tar.gz && rm grafana-1.9.0-rc1.tar.gz &&\
-	mv /tmp/1.9.0-rc1 /src/grafana
+	mv /tmp/grafana-1.9.0-rc1 /src/grafana
 
 add ./grafana/config.js /src/grafana/config.js
 
